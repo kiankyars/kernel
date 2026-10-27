@@ -1,0 +1,671 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "g0-0-41b3cac00ba9",
+      "correctness": {
+        "cases_run": 24,
+        "cases_total": 24,
+        "failures": [],
+        "passed": true
+      },
+      "generation": 0,
+      "gpu_fitness": null,
+      "integration": {
+        "baseline_convolution_fraction": 0.38704539720346126,
+        "baseline_latency_ms": 1.2618609998753527,
+        "baseline_tokens_per_second": 3169.921251544443,
+        "candidate_latency_ms": 250.9379230000377,
+        "candidate_tokens": [
+          33,
+          47,
+          19,
+          38
+        ],
+        "candidate_tokens_per_second": 15.940197289348726,
+        "convolution_calls_per_rollout": 16,
+        "finite_logits": true,
+        "full_logit_tensors_checked": 4,
+        "logits_match": true,
+        "logits_max_error": 7.152557373046875e-07,
+        "passed": true,
+        "production_inference_verified": false,
+        "profile_convolution_latency_ms": 0.6889350013352669,
+        "profile_note": "Separate instrumented synthetic baseline; not a production bottleneck estimate.",
+        "profile_total_latency_ms": 1.7799849999846629,
+        "reference_tokens": [
+          33,
+          47,
+          19,
+          38
+        ],
+        "scope": "synthetic_random_weight_causal_decoder",
+        "seed": 366464402,
+        "speedup": 0.005028578322436993,
+        "steps": 4,
+        "timing_kind": "cpu_interpreter_diagnostic",
+        "timing_repeats": 3,
+        "tokens_match": true
+      },
+      "memory": {
+        "checks": [
+          {
+            "exit_code": 1,
+            "expected_rejection": true,
+            "log": "/workspace/kernel/artifacts/validated-run/g0-0-41b3cac00ba9/tilelens-negative-probe.log",
+            "passed": true,
+            "tool": "tilelens-negative-probe"
+          },
+          {
+            "exit_code": 0,
+            "log": "/workspace/kernel/artifacts/validated-run/g0-0-41b3cac00ba9/tilelens.log",
+            "memory_cases_checked": 6,
+            "numerical_cases_checked": 0,
+            "passed": true,
+            "sanitizer_launches": 6,
+            "tool": "tilelens"
+          }
+        ],
+        "passed": true,
+        "scope": "symbolic CPU bounds; not compiled GPU race safety",
+        "status": "passed"
+      },
+      "source_hash": "41b3cac00ba969455ad3f37ca301bfb8e9b5cad3da05adcfffe62f47fe2476fc",
+      "spec": {
+        "block_size": 128,
+        "num_warps": 4,
+        "unroll": true,
+        "variant": "fused"
+      },
+      "status": "cpu_validated"
+    },
+    {
+      "candidate_id": "g0-1-3ca8ddbbdfe6",
+      "correctness": {
+        "cases_run": 24,
+        "cases_total": 24,
+        "failures": [],
+        "passed": true
+      },
+      "generation": 0,
+      "gpu_fitness": null,
+      "integration": {
+        "baseline_convolution_fraction": 0.43442447117123667,
+        "baseline_latency_ms": 1.3090300001294963,
+        "baseline_tokens_per_second": 3055.6977300782246,
+        "candidate_latency_ms": 292.40774899994904,
+        "candidate_tokens": [
+          33,
+          47,
+          19,
+          38
+        ],
+        "candidate_tokens_per_second": 13.679528034671534,
+        "convolution_calls_per_rollout": 16,
+        "finite_logits": true,
+        "full_logit_tensors_checked": 4,
+        "logits_match": true,
+        "logits_max_error": 7.152557373046875e-07,
+        "passed": true,
+        "production_inference_verified": false,
+        "profile_convolution_latency_ms": 0.5770760003542819,
+        "profile_note": "Separate instrumented synthetic baseline; not a production bottleneck estimate.",
+        "profile_total_latency_ms": 1.328369000020757,
+        "reference_tokens": [
+          33,
+          47,
+          19,
+          38
+        ],
+        "scope": "synthetic_random_weight_causal_decoder",
+        "seed": 366464402,
+        "speedup": 0.004476728146249382,
+        "steps": 4,
+        "timing_kind": "cpu_interpreter_diagnostic",
+        "timing_repeats": 3,
+        "tokens_match": true
+      },
+      "memory": {
+        "checks": [
+          {
+            "exit_code": 1,
+            "expected_rejection": true,
+            "log": "/workspace/kernel/artifacts/validated-run/g0-1-3ca8ddbbdfe6/tilelens-negative-probe.log",
+            "passed": true,
+            "tool": "tilelens-negative-probe"
+          },
+          {
+            "exit_code": 0,
+            "log": "/workspace/kernel/artifacts/validated-run/g0-1-3ca8ddbbdfe6/tilelens.log",
+            "memory_cases_checked": 6,
+            "numerical_cases_checked": 0,
+            "passed": true,
+            "sanitizer_launches": 22,
+            "tool": "tilelens"
+          }
+        ],
+        "passed": true,
+        "scope": "symbolic CPU bounds; not compiled GPU race safety",
+        "status": "passed"
+      },
+      "source_hash": "3ca8ddbbdfe674f9462b17b54b1d5c17f1b3f42d4be955bca02cc1232e9058fb",
+      "spec": {
+        "block_size": 128,
+        "num_warps": 4,
+        "unroll": true,
+        "variant": "split"
+      },
+      "status": "cpu_validated"
+    },
+    {
+      "candidate_id": "g0-2-99315b5de761",
+      "correctness": {
+        "cases_run": 1,
+        "cases_total": 24,
+        "failures": [
+          {
+            "case": "case-0-float32-mode0-dense",
+            "error": "AssertionError: Tensor-likes are not close!\n\nMismatched elements: 1 / 1 (100.0%)\nGreatest absolute difference: 1.481540560722351 at index (0,) (up to 2e-06 allowed)\nGreatest relative difference: 0.6808875799179077 at index (0,) (up to 2e-05 allowed)"
+          }
+        ],
+        "passed": false
+      },
+      "generation": 0,
+      "gpu_fitness": null,
+      "integration": null,
+      "memory": null,
+      "source_hash": "99315b5de761f5dcb8b9e13e82822fbd6da4937af75096d415c598a2ee075588",
+      "spec": {
+        "block_size": 128,
+        "num_warps": 4,
+        "unroll": true,
+        "variant": "broken_shift"
+      },
+      "status": "correctness_rejected"
+    },
+    {
+      "candidate_id": "g0-3-2a162b7fd261",
+      "correctness": {
+        "cases_run": 24,
+        "cases_total": 24,
+        "failures": [],
+        "passed": true
+      },
+      "generation": 0,
+      "gpu_fitness": null,
+      "integration": {
+        "baseline_convolution_fraction": 0.4394468480429601,
+        "baseline_latency_ms": 1.6000690000055329,
+        "baseline_tokens_per_second": 2499.892192140569,
+        "candidate_latency_ms": 247.11449100004756,
+        "candidate_tokens": [
+          33,
+          47,
+          19,
+          38
+        ],
+        "candidate_tokens_per_second": 16.186828962609198,
+        "convolution_calls_per_rollout": 16,
+        "finite_logits": true,
+        "full_logit_tensors_checked": 4,
+        "logits_match": true,
+        "logits_max_error": 7.152557373046875e-07,
+        "passed": true,
+        "production_inference_verified": false,
+        "profile_convolution_latency_ms": 0.7520500000737229,
+        "profile_note": "Separate instrumented synthetic baseline; not a production bottleneck estimate.",
+        "profile_total_latency_ms": 1.7113559999870631,
+        "reference_tokens": [
+          33,
+          47,
+          19,
+          38
+        ],
+        "scope": "synthetic_random_weight_causal_decoder",
+        "seed": 366464402,
+        "speedup": 0.006475010807865674,
+        "steps": 4,
+        "timing_kind": "cpu_interpreter_diagnostic",
+        "timing_repeats": 3,
+        "tokens_match": true
+      },
+      "memory": {
+        "checks": [
+          {
+            "exit_code": 1,
+            "expected_rejection": true,
+            "log": "/workspace/kernel/artifacts/validated-run/g0-3-2a162b7fd261/tilelens-negative-probe.log",
+            "passed": true,
+            "tool": "tilelens-negative-probe"
+          },
+          {
+            "exit_code": 0,
+            "log": "/workspace/kernel/artifacts/validated-run/g0-3-2a162b7fd261/tilelens.log",
+            "memory_cases_checked": 6,
+            "numerical_cases_checked": 0,
+            "passed": true,
+            "sanitizer_launches": 6,
+            "tool": "tilelens"
+          }
+        ],
+        "passed": true,
+        "scope": "symbolic CPU bounds; not compiled GPU race safety",
+        "status": "passed"
+      },
+      "source_hash": "2a162b7fd26131f118db15389fc55c2485daea4c27dea54ef9fc62c69441a513",
+      "spec": {
+        "block_size": 128,
+        "num_warps": 2,
+        "unroll": true,
+        "variant": "fused"
+      },
+      "status": "cpu_validated"
+    },
+    {
+      "candidate_id": "g1-0-7842816e56f1",
+      "correctness": {
+        "cases_run": 24,
+        "cases_total": 24,
+        "failures": [],
+        "passed": true
+      },
+      "generation": 1,
+      "gpu_fitness": null,
+      "integration": {
+        "baseline_convolution_fraction": 0.43882380306216245,
+        "baseline_latency_ms": 1.248099999884289,
+        "baseline_tokens_per_second": 3204.8714048320157,
+        "candidate_latency_ms": 281.72903200015753,
+        "candidate_tokens": [
+          47,
+          12,
+          53,
+          4
+        ],
+        "candidate_tokens_per_second": 14.198039767508815,
+        "convolution_calls_per_rollout": 16,
+        "finite_logits": true,
+        "full_logit_tensors_checked": 4,
+        "logits_match": true,
+        "logits_max_error": 9.5367431640625e-07,
+        "passed": true,
+        "production_inference_verified": false,
+        "profile_convolution_latency_ms": 0.5761659992913337,
+        "profile_note": "Separate instrumented synthetic baseline; not a production bottleneck estimate.",
+        "profile_total_latency_ms": 1.312977999987197,
+        "reference_tokens": [
+          47,
+          12,
+          53,
+          4
+        ],
+        "scope": "synthetic_random_weight_causal_decoder",
+        "seed": 1052305580,
+        "speedup": 0.00443014335804622,
+        "steps": 4,
+        "timing_kind": "cpu_interpreter_diagnostic",
+        "timing_repeats": 3,
+        "tokens_match": true
+      },
+      "memory": {
+        "checks": [
+          {
+            "exit_code": 1,
+            "expected_rejection": true,
+            "log": "/workspace/kernel/artifacts/validated-run/g1-0-7842816e56f1/tilelens-negative-probe.log",
+            "passed": true,
+            "tool": "tilelens-negative-probe"
+          },
+          {
+            "exit_code": 0,
+            "log": "/workspace/kernel/artifacts/validated-run/g1-0-7842816e56f1/tilelens.log",
+            "memory_cases_checked": 6,
+            "numerical_cases_checked": 0,
+            "passed": true,
+            "sanitizer_launches": 18,
+            "tool": "tilelens"
+          }
+        ],
+        "passed": true,
+        "scope": "symbolic CPU bounds; not compiled GPU race safety",
+        "status": "passed"
+      },
+      "source_hash": "7842816e56f1fb18454d41ac3c2a45255175aadc924110e38389ab48844dee9b",
+      "spec": {
+        "block_size": 128,
+        "num_warps": 8,
+        "unroll": true,
+        "variant": "split"
+      },
+      "status": "cpu_validated"
+    },
+    {
+      "candidate_id": "g1-1-41b3cac00ba9",
+      "correctness": {
+        "cases_run": 24,
+        "cases_total": 24,
+        "failures": [],
+        "passed": true
+      },
+      "generation": 1,
+      "gpu_fitness": null,
+      "integration": {
+        "baseline_convolution_fraction": 0.4441051160844779,
+        "baseline_latency_ms": 1.4009489998443314,
+        "baseline_tokens_per_second": 2855.2074347063785,
+        "candidate_latency_ms": 257.4908730000516,
+        "candidate_tokens": [
+          47,
+          12,
+          53,
+          4
+        ],
+        "candidate_tokens_per_second": 15.534531198700774,
+        "convolution_calls_per_rollout": 16,
+        "finite_logits": true,
+        "full_logit_tensors_checked": 4,
+        "logits_match": true,
+        "logits_max_error": 9.5367431640625e-07,
+        "passed": true,
+        "production_inference_verified": false,
+        "profile_convolution_latency_ms": 0.5933120000918279,
+        "profile_note": "Separate instrumented synthetic baseline; not a production bottleneck estimate.",
+        "profile_total_latency_ms": 1.3359719998788933,
+        "reference_tokens": [
+          47,
+          12,
+          53,
+          4
+        ],
+        "scope": "synthetic_random_weight_causal_decoder",
+        "seed": 1052305580,
+        "speedup": 0.005440771486467603,
+        "steps": 4,
+        "timing_kind": "cpu_interpreter_diagnostic",
+        "timing_repeats": 3,
+        "tokens_match": true
+      },
+      "memory": {
+        "checks": [
+          {
+            "exit_code": 1,
+            "expected_rejection": true,
+            "log": "/workspace/kernel/artifacts/validated-run/g1-1-41b3cac00ba9/tilelens-negative-probe.log",
+            "passed": true,
+            "tool": "tilelens-negative-probe"
+          },
+          {
+            "exit_code": 0,
+            "log": "/workspace/kernel/artifacts/validated-run/g1-1-41b3cac00ba9/tilelens.log",
+            "memory_cases_checked": 6,
+            "numerical_cases_checked": 0,
+            "passed": true,
+            "sanitizer_launches": 6,
+            "tool": "tilelens"
+          }
+        ],
+        "passed": true,
+        "scope": "symbolic CPU bounds; not compiled GPU race safety",
+        "status": "passed"
+      },
+      "source_hash": "41b3cac00ba969455ad3f37ca301bfb8e9b5cad3da05adcfffe62f47fe2476fc",
+      "spec": {
+        "block_size": 128,
+        "num_warps": 4,
+        "unroll": true,
+        "variant": "fused"
+      },
+      "status": "cpu_validated"
+    },
+    {
+      "candidate_id": "g1-2-ed602562e862",
+      "correctness": {
+        "cases_run": 24,
+        "cases_total": 24,
+        "failures": [],
+        "passed": true
+      },
+      "generation": 1,
+      "gpu_fitness": null,
+      "integration": {
+        "baseline_convolution_fraction": 0.44126364429119896,
+        "baseline_latency_ms": 1.3903230001233169,
+        "baseline_tokens_per_second": 2877.0292943763525,
+        "candidate_latency_ms": 285.1520019999043,
+        "candidate_tokens": [
+          47,
+          12,
+          53,
+          4
+        ],
+        "candidate_tokens_per_second": 14.027606230873815,
+        "convolution_calls_per_rollout": 16,
+        "finite_logits": true,
+        "full_logit_tensors_checked": 4,
+        "logits_match": true,
+        "logits_max_error": 9.5367431640625e-07,
+        "passed": true,
+        "production_inference_verified": false,
+        "profile_convolution_latency_ms": 0.6584919999568228,
+        "profile_note": "Separate instrumented synthetic baseline; not a production bottleneck estimate.",
+        "profile_total_latency_ms": 1.4922870000191324,
+        "reference_tokens": [
+          47,
+          12,
+          53,
+          4
+        ],
+        "scope": "synthetic_random_weight_causal_decoder",
+        "seed": 1052305580,
+        "speedup": 0.004875725894864254,
+        "steps": 4,
+        "timing_kind": "cpu_interpreter_diagnostic",
+        "timing_repeats": 3,
+        "tokens_match": true
+      },
+      "memory": {
+        "checks": [
+          {
+            "exit_code": 1,
+            "expected_rejection": true,
+            "log": "/workspace/kernel/artifacts/validated-run/g1-2-ed602562e862/tilelens-negative-probe.log",
+            "passed": true,
+            "tool": "tilelens-negative-probe"
+          },
+          {
+            "exit_code": 0,
+            "log": "/workspace/kernel/artifacts/validated-run/g1-2-ed602562e862/tilelens.log",
+            "memory_cases_checked": 6,
+            "numerical_cases_checked": 0,
+            "passed": true,
+            "sanitizer_launches": 18,
+            "tool": "tilelens"
+          }
+        ],
+        "passed": true,
+        "scope": "symbolic CPU bounds; not compiled GPU race safety",
+        "status": "passed"
+      },
+      "source_hash": "ed602562e862fc27bd42e1f5158edbc0bd625fa14f920c08af504359d4b0effd",
+      "spec": {
+        "block_size": 128,
+        "num_warps": 2,
+        "unroll": true,
+        "variant": "split"
+      },
+      "status": "cpu_validated"
+    },
+    {
+      "candidate_id": "g1-3-cb66cde014cf",
+      "correctness": {
+        "cases_run": 24,
+        "cases_total": 24,
+        "failures": [],
+        "passed": true
+      },
+      "generation": 1,
+      "gpu_fitness": null,
+      "integration": {
+        "baseline_convolution_fraction": 0.41424070982074024,
+        "baseline_latency_ms": 1.300478999837651,
+        "baseline_tokens_per_second": 3075.789767077632,
+        "candidate_latency_ms": 243.32061299992347,
+        "candidate_tokens": [
+          47,
+          12,
+          53,
+          4
+        ],
+        "candidate_tokens_per_second": 16.439215530010433,
+        "convolution_calls_per_rollout": 16,
+        "finite_logits": true,
+        "full_logit_tensors_checked": 4,
+        "logits_match": true,
+        "logits_max_error": 9.5367431640625e-07,
+        "passed": true,
+        "production_inference_verified": false,
+        "profile_convolution_latency_ms": 0.5480619995523739,
+        "profile_note": "Separate instrumented synthetic baseline; not a production bottleneck estimate.",
+        "profile_total_latency_ms": 1.323051999861491,
+        "reference_tokens": [
+          47,
+          12,
+          53,
+          4
+        ],
+        "scope": "synthetic_random_weight_causal_decoder",
+        "seed": 1052305580,
+        "speedup": 0.005344713642645886,
+        "steps": 4,
+        "timing_kind": "cpu_interpreter_diagnostic",
+        "timing_repeats": 3,
+        "tokens_match": true
+      },
+      "memory": {
+        "checks": [
+          {
+            "exit_code": 1,
+            "expected_rejection": true,
+            "log": "/workspace/kernel/artifacts/validated-run/g1-3-cb66cde014cf/tilelens-negative-probe.log",
+            "passed": true,
+            "tool": "tilelens-negative-probe"
+          },
+          {
+            "exit_code": 0,
+            "log": "/workspace/kernel/artifacts/validated-run/g1-3-cb66cde014cf/tilelens.log",
+            "memory_cases_checked": 6,
+            "numerical_cases_checked": 0,
+            "passed": true,
+            "sanitizer_launches": 6,
+            "tool": "tilelens"
+          }
+        ],
+        "passed": true,
+        "scope": "symbolic CPU bounds; not compiled GPU race safety",
+        "status": "passed"
+      },
+      "source_hash": "cb66cde014cf48693df3cc9e1d94bdbdc127419090a9a9ca76b1342ed14c0ca0",
+      "spec": {
+        "block_size": 128,
+        "num_warps": 8,
+        "unroll": true,
+        "variant": "fused"
+      },
+      "status": "cpu_validated"
+    }
+  ],
+  "date": "2026-10-27",
+  "evaluated": 8,
+  "gpu_winner": null,
+  "offline_codegen": {
+    "cuda_runtime_executed": false,
+    "gpu_latency_ms": null,
+    "purpose": "offline CUDA compilation only",
+    "results": [
+      {
+        "base_dtype": "fp32",
+        "candidate_source_sha256": "e8656e9d98ae9916b456a7511a7c9b87cbc50e9f1ffdc074d5c94ea3c855a7ec",
+        "cubin_sha256": "ed7035c832f2c02273d4def319bf74b3f364d86c200b07cd49221fe62bb2a6c5",
+        "dtype": "fp32",
+        "ptx_sha256": "27f283edf4202e67dfa87f8a1f1393086d7bb8636078c95d83bb074a6a474f1c",
+        "status": "passed",
+        "variant": "fused"
+      },
+      {
+        "base_dtype": "fp32",
+        "candidate_source_sha256": "fc99421e120c17ca8b09fdf9af02a24e28bee536a783d70bb0df60dc7238a017",
+        "cubin_sha256": "91856ce4f410247b36843d53c657ffd1745eae2858a8c0c5b0f1602b95348e62",
+        "dtype": "fp32",
+        "ptx_sha256": "fa387a8d1abc847aaf969aec6c469fdc7c810c4ded0bd01102513d5aaa0a58ab",
+        "status": "passed",
+        "variant": "split"
+      },
+      {
+        "base_dtype": "fp32",
+        "candidate_source_sha256": "e8656e9d98ae9916b456a7511a7c9b87cbc50e9f1ffdc074d5c94ea3c855a7ec",
+        "cubin_sha256": "6022a9516660544eebb4dd62ca70d064c6a6c0c265ea9e7fe44c9d967492ecfe",
+        "dtype": "fp16",
+        "ptx_sha256": "71942df568259e429883684626a2a52aa918df4716e9510ac3c75b2572c73ad5",
+        "status": "passed",
+        "variant": "fused"
+      },
+      {
+        "base_dtype": "fp32",
+        "candidate_source_sha256": "fc99421e120c17ca8b09fdf9af02a24e28bee536a783d70bb0df60dc7238a017",
+        "cubin_sha256": "3c4c0311871672e52ec383fbe2d73acb8660df842f6043fb42c118a590d55731",
+        "dtype": "fp16",
+        "ptx_sha256": "b36dc732c5b071eb3977d6ba2b34102cb3bf125adcdb9b4089953a5464c0cd18",
+        "status": "passed",
+        "variant": "split"
+      },
+      {
+        "base_dtype": "fp32",
+        "candidate_source_sha256": "e8656e9d98ae9916b456a7511a7c9b87cbc50e9f1ffdc074d5c94ea3c855a7ec",
+        "cubin_sha256": "106d77fa756bc0352332783a5727bfd3784ae6fba10df57664d393cf04594d48",
+        "dtype": "bf16",
+        "ptx_sha256": "c31d1743185643c8406a5884b80f6807b61774a7d2b7e8b8379fd09815b02773",
+        "status": "passed",
+        "variant": "fused"
+      },
+      {
+        "base_dtype": "fp32",
+        "candidate_source_sha256": "fc99421e120c17ca8b09fdf9af02a24e28bee536a783d70bb0df60dc7238a017",
+        "cubin_sha256": "37a815411fda2ec3c5c02786905da4abbe7c48fd21f7f8f08153ee5587b63e46",
+        "dtype": "bf16",
+        "ptx_sha256": "be925edd2d7a3f03ce1a2eab6d860101a9da4d973f1cdfb020bdca0f285a797f",
+        "status": "passed",
+        "variant": "split"
+      }
+    ],
+    "status": "passed",
+    "target": "sm80",
+    "torch_version": "2.9.1+cpu",
+    "triton_version": "3.6.0"
+  },
+  "production_eligible": false,
+  "rejected": 1,
+  "run": {
+    "backend": "interpret",
+    "cases_per_candidate": 24,
+    "cpu": "x86_64",
+    "device": "cpu",
+    "generations": 2,
+    "gpu": null,
+    "oracle_scope": "DFlash2 reference numerical contract; not distributional model quality",
+    "population": 4,
+    "python": "3.12.14",
+    "source_sha256": "d8c3f4fcd50ae2e7cbcfa1c0bdfc125efe2ca53b233e71cec197b8a033ef2320",
+    "timestamp_unix": 1793088241.66691,
+    "timing_repeats": 3,
+    "torch": "2.9.1+cpu",
+    "torch_threads": 1,
+    "triton": "3.6.0",
+    "worker_seed": 20261027
+  },
+  "test_suite": {
+    "failed": 0,
+    "passed": 92,
+    "warnings": 4,
+    "warnings_reason": "intentional Inf/NaN interpreter arithmetic"
+  },
+  "validated": 7
+}
